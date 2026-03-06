@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Поиск по Гарри Поттеру и методам рационального мышления</title>
+</head>
+<body>
+
+<h1>Поисковая система</h1>
+
+<form method="POST">
+    <input type="text" name="query" value="{{ query }}" size="40">
+    <button type="submit">Поиск</button>
+</form>
+<a href="/">Очистить поиск</a>
+
+<hr>
+
+{% if results %}
+
+<h2>Результаты</h2>
+
+<ul>
+{% for doc_id, score in results %}
+<li>
+    download-{{ doc_id }}.html  score={{ "%.4f"|format(score) }}
+</li>
+{% endfor %}
+</ul>
+
+{% endif %}
+
+</body>
+</html>

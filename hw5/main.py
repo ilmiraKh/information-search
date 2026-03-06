@@ -4,8 +4,10 @@ from collections import Counter, defaultdict
 
 import pymorphy3
 
-TF_IDF_FOLDER = '../hw4/results'
-PAGES_FOLDER = '../hw1/pages'
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+INDEX_PATH = os.path.join(BASE_DIR, "..", "hw3", "inverted_index.txt")
+TF_IDF_FOLDER = os.path.join(BASE_DIR, "..", "hw4", "results")
+PAGES_FOLDER = os.path.join(BASE_DIR, "..", "hw1", "pages")
 PAGES_COUNT = 122
 
 morph = pymorphy3.MorphAnalyzer()
@@ -13,7 +15,7 @@ morph = pymorphy3.MorphAnalyzer()
 
 def get_inverted_index():
     index = defaultdict(set)
-    with open('../hw3/inverted_index.txt', "r", encoding="utf-8") as file:
+    with open(INDEX_PATH, "r", encoding="utf-8") as file:
         for line in file:
             parts = line.strip().split(maxsplit=1)
             lemma = parts[0]

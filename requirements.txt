@@ -1,3 +1,6 @@
-pymorphy3
+pymorphy3~=2.0.6
 pymorphy3-dicts-ru
-beautifulsoup4
+beautifulsoup4~=4.14.3
+
+requests~=2.32.5
+flask~=3.1.2

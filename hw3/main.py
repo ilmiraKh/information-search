@@ -1,9 +1,11 @@
+import os
 import re
 from collections import defaultdict
 
 import pymorphy3
 
-INDEX = 'inverted_index.txt'
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+INDEX = os.path.join(BASE_DIR, 'inverted_index.txt')
 morph = pymorphy3.MorphAnalyzer()
 
 
